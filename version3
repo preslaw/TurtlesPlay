@@ -1,0 +1,33 @@
+import turtle
+import random
+
+
+turtlesHorde = []
+turtlesHordeLen= 120
+
+
+for enum,aTurtle in enumerate (range(turtlesHordeLen)):
+  
+  aTurtle = turtle.Turtle()
+  aTurtle.hideturtle()
+  aTurtle.speed(0)
+  radius= 360/turtlesHordeLen*enum
+  aTurtle.left(radius)
+  aTurtle.forward(100)
+  turtlesHorde += [aTurtle]
+
+draw = random.randrange(10,20)
+print(draw)
+while draw:  
+  for aTurtle in turtlesHorde:
+    aTurtle.forward(random.randrange(10,25))
+    switch = random.randrange(0,2)
+    if switch:
+      aTurtle.left(random.randrange(10,25))
+    else:
+      aTurtle.right(random.randrange(10,25))
+  draw-=1
+  print(draw)
+  
+z = input('koniec?')
+    
